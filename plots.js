@@ -1,3 +1,7 @@
+// load json article file
+
+
+
 // Initialize layout parameters
 var layout = {
   autosize: true,
