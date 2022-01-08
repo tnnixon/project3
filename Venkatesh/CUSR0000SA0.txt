@@ -1,0 +1,27 @@
++-------------+------+--------+------------+---------+
+|  series id  | year | period | periodName |  value  |
++-------------+------+--------+------------+---------+
+| CUSR0000SA0 | 2021 |  M11   |  November  | 278.880 |
+| CUSR0000SA0 | 2021 |  M10   |  October   | 276.724 |
+| CUSR0000SA0 | 2021 |  M09   | September  | 274.138 |
+| CUSR0000SA0 | 2021 |  M08   |   August   | 273.012 |
+| CUSR0000SA0 | 2021 |  M07   |    July    | 272.265 |
+| CUSR0000SA0 | 2021 |  M06   |    June    | 270.981 |
+| CUSR0000SA0 | 2021 |  M05   |    May     | 268.551 |
+| CUSR0000SA0 | 2021 |  M04   |   April    | 266.832 |
+| CUSR0000SA0 | 2021 |  M03   |   March    | 264.793 |
+| CUSR0000SA0 | 2021 |  M02   |  February  | 263.161 |
+| CUSR0000SA0 | 2021 |  M01   |  January   | 262.231 |
+| CUSR0000SA0 | 2020 |  M12   |  December  | 261.560 |
+| CUSR0000SA0 | 2020 |  M11   |  November  | 260.927 |
+| CUSR0000SA0 | 2020 |  M10   |  October   | 260.462 |
+| CUSR0000SA0 | 2020 |  M09   | September  | 260.149 |
+| CUSR0000SA0 | 2020 |  M08   |   August   | 259.511 |
+| CUSR0000SA0 | 2020 |  M07   |    July    | 258.604 |
+| CUSR0000SA0 | 2020 |  M06   |    June    | 257.282 |
+| CUSR0000SA0 | 2020 |  M05   |    May     | 255.942 |
+| CUSR0000SA0 | 2020 |  M04   |   April    | 256.192 |
+| CUSR0000SA0 | 2020 |  M03   |   March    | 257.989 |
+| CUSR0000SA0 | 2020 |  M02   |  February  | 258.824 |
+| CUSR0000SA0 | 2020 |  M01   |  January   | 258.687 |
++-------------+------+--------+------------+---------+
