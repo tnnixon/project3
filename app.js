@@ -1,8 +1,16 @@
-var url = 'https://eodhistoricaldata.com/api/news?api_token='+api_key+'&t='+tag+'&offset=0&limit=1&from='+startdate+'&to='+enddate;
-var data = {};
 
-fetch(url)
-  .then(response => response.json())
-  .then(data => console.log(data));
+// function to update everything
+function updateStuff()
+{
+    console.log("In updateStuff");
+    // grab start and end dates
 
-  
+    // get start date
+    var selectBegin = d3.select("#selDataset1").property("value");
+
+    // get end date
+    var selectEnd = d3.select("#selDataset2").property("value");
+
+    console.log(selectBegin);
+    console.log(selectEnd);
+}
