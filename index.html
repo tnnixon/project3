@@ -12,21 +12,11 @@
     <title>Economic Data</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
 
 <body>
-
-    <script>
-        console.log("hello");
-        d3.json("article.json").then(function(data) {
-            console.log(data);
-            let article = data[0];
-            console.log(article);
-            console.log(article.title);
-            d3.select("#news")
-                .append("h5").text(article.title);
-        });
-    </script>
 
     <div class="container">
         <div class="row">
@@ -38,39 +28,38 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3"></div>
+            <div class="col-md-3 text-center">
+                <div class="well">
+                    <div class="btn-group">
+                        <button class="btn btn-danger" onclick="updateStuff()">Recalculate</button>
+                    </div>
+                </div>
+            </div>
             <div class="col-md-3 text-center">
                 <div class="well">
                     <h5>Select Start Date</h5>
-                    <select id="selDataset">
-                        <option value="dataset1">DataSet1</option>
-                        <option value="dataset2">DataSet2</option>
+                    <select id="selDataset1">
                     </select>
                 </div>
             </div>
             <div class="col-md-3 text-center">
                 <div class="well">
                     <h5>Select End Date</h5>
-                    <select id="selDataset">
-                        <option value="2012-01-311">2012 Jan</option>
-                        <option value="2012-02-29">2012 Feb</option>
-                        <option value="2012-03-31">2012 Mar</option>
-                        <option value="2012-04-30">2012 Apr</option>
-                        <option value="2012-05-31">2012 May</option>
-                        <option value="2012-06-30">2012 Jun</option>
-                        <option value="2012-07-31">2012 Jul</option>
-                        <option value="2012-08-31">2012 Aug</option>
-                        <option value="2012-09-30">2012 Sep</option>
-                        <option value="2012-10-31">2012 Oct</option>
-                        <option value="2012-11-30">2012 Nov</option>
-                        <option value="2012-12-31">2012 Dec</option>
-                        <option value="year2">Year2</option>
+                    <select id="selDataset2">
                     </select>
                 </div>
-            <div class="col-md-3">
+            </div>
+            <div class="col-md-3 text-center">
                 <div class="well">
-                    <a href="#">Institutional Data API</a>
-                    <a href="#">Individual Data API</a>
+                    <div class="btn-group-vertical">
+                        <button class="btn btn-info">
+                            <a href="#" onClick="window.open('http://localhost:5000/api/institutional', '_blank')">Institutional Data API</a>
+                        </button>
+                        <br>
+                        <button class="btn btn-info">
+                            <a href="#" onClick="window.open('http://localhost:5000/api/individual', '_blank')">Individual Data API</a>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,6 +96,7 @@
         </div>
     </div>
 
+    <script src="app.js"></script>
     <script src="plots.js"></script>
 
     <!-- Bootstrap Bundle with Popper -->
