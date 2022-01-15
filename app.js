@@ -58,7 +58,7 @@ function getArt(start, end)
 
     // build API url string
 
-    var url1 = 'https://eodhistoricaldata.com/api/news?api_token=61d786d219bb25.49719494&t=financial results&offset=0&limit=5&from='
+    var url1 = 'https://eodhistoricaldata.com/api/news?api_token=61d786d219bb25.49719494&t=financial results&offset=0&limit=3&from='
     var url2 = '&to='
 
     var url = url1 + startDate + url2 + endDate;
@@ -77,8 +77,16 @@ function getArt(start, end)
 
             for (let i = 0; i < articles.length; i++) {
 
+                //d3.select("#news")
+                //    .append("h5").text(articles[i].title);
                 d3.select("#news")
-                    .append("h5").text(articles[i].title);
+                    //.append("a").text(articles[i].link)
+                    .append("a").text(articles[i].title)
+                    .attr("href", (articles[i].link));
+                    d3.select("#news")
+                    .append("br");
+                    d3.select("#news")
+                    .append("br");
             };
         })
         .catch(error => console.error(error));
@@ -126,41 +134,48 @@ function buildInstPlot()
         let nasd_valsDict = data.nasd_val;
         var sp_vals = [];
         let sp_valsDict = data.sp_close;
+        var hou_vals = [];
+        let hou_valsDict = data.hou_val2;
         
         for (let i = 0; i < Object.keys(monthsDict).length; i++)
         {
             months.push(monthsDict[i]);
-        }
+        };
 
         for (let i = 0; i < Object.keys(m0_valsDict).length; i++)
         {
             m0_vals.push(m0_valsDict[i]);
-        }
+        };
 
         for (let i = 0; i < Object.keys(m1_valsDict).length; i++)
         {
             m1_vals.push(m1_valsDict[i]);
-        }
+        };
 
         for (let i = 0; i < Object.keys(m2_valsDict).length; i++)
         {
             m2_vals.push(m2_valsDict[i]);
-        }
+        };
 
         for (let i = 0; i < Object.keys(djia_valsDict).length; i++)
         {
             djia_vals.push(djia_valsDict[i]);
-        }
+        };
 
         for (let i = 0; i < Object.keys(nasd_valsDict).length; i++)
         {
             nasd_vals.push(nasd_valsDict[i]);
-        }
+        };
 
         for (let i = 0; i < Object.keys(sp_valsDict).length; i++)
         {
             sp_vals.push(sp_valsDict[i]);
-        }
+        };
+
+        for (let i = 0; i < Object.keys(hou_valsDict).length; i++)
+        {
+            hou_vals.push(hou_valsDict[i]);
+        };
 
         var trace1 = {
             x: months,
@@ -172,33 +187,39 @@ function buildInstPlot()
             x: months,
             y: m1_vals,
             name: 'M1'
-        }
+        };
 
         var trace3 = {
             x: months,
             y: m2_vals,
             name: 'M2'
-        }
+        };
 
         var trace4 = {
             x: months,
             y: djia_vals,
             name: 'DJIA'
-        }
+        };
 
         var trace5 = {
             x: months,
             y: nasd_vals,
             name: 'NASDAQ'
-        }
+        };
 
         var trace6 = {
             x: months,
             y: sp_vals,
             name: 'S&P 500'
-        }
+        };
 
-        var plotData = [trace2, trace3, trace4, trace5, trace6];
+        var trace7 = {
+            x: months,
+            y: hou_vals,
+            name: 'Housing'
+        };
+
+        var plotData = [trace2, trace3, trace4, trace5, trace6, trace7];
 
         Plotly.newPlot("chart1", plotData, layout, config);
 
@@ -280,7 +301,7 @@ function initialize()
     var select1 = d3.select("#selDataset1");
     var select2 = d3.select("#selDataset2");
 
-    var years = ['2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021'];
+    var years = ['2017', '2018', '2019', '2020', '2021'];
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     years.forEach((year) => {
