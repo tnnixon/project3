@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var url = 'https://eodhistoricaldata.com/api/news?api_token='+'61d786d219bb25.49719494'+'&t='+'finance news'+'&offset=0&limit=1&from='+'2019-06-01'+'&to='+'2019-06-30';
+        //var data = {};
+
+        fetch(url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data)
+            });
+    </script>
+
+    <h1>Check the console!</h1>
+    
+</body>
+</html>
